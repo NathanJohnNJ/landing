@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+
+@property --bg-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +30,30 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.firstLogo{
+  border-radius: 50%;
+  background: border-box,  conic-gradient(from var(--bg-angle) at 50% 50%, #4eeaff, #4bb9ff, #5463ff, #b35dff, #ff5bdb, #ff547d, #ff7c43, #ffb642, #fff847, #76ff4f, #49ffd2, #44efff) content-box, none; 
+  animation: rainbowAnimation 15s infinite linear running;
+  -moz-animation: rainbowAnimation 15s infinite linear running;
+  -webkit-animation: rainbowAnimation 15s infinite linear running;
+  border: 10px solid transparent;
+}
+
+
+@keyframes rainbowAnimation {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+@-moz-keyframes rainbowAnimation {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+@-webkit-keyframes rainbowAnimation {
+  to {
+    --bg-angle: 360deg;
+  }
 }
